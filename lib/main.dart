@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_final_fields, unused_field
 
 import 'package:flutter/material.dart';
 
@@ -15,6 +15,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var _frases = [
+    "A gratidão é a memória do coração.",
+    "Deixe pra trás o que não te leva pra frente.",
+    "Viver não é esperar a tempestade passar, é aprender a dançar na chuva.",
+    "As crises não afastam os amigos. Apenas selecionam.",
+    "Faça valer a pena, as oportunidades não voltam.",
+    "Aprendi o que era certo, com a pessoa errada.",
+    "Nada é pequeno quando o amor é grande."
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
