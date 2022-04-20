@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields, unused_field
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,6 +27,16 @@ class _HomeState extends State<Home> {
     "Nada é pequeno quando o amor é grande."
   ];
 
+  var _fraseGerada = "Clique abaixo para gerar uma frase";
+
+  void gerarFrase() {
+    var numero = Random().nextInt(_frases.length);
+
+    setState(() {
+      _fraseGerada = _frases[numero];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +53,7 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 Image.asset("images/logo.png"),
                 Text(
-                  "Clique abaixo para gerar uma frase",
+                  _fraseGerada,
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                     fontSize: 25,
@@ -59,7 +71,7 @@ class _HomeState extends State<Home> {
                     ),
                   ),
                   color: Colors.green,
-                  onPressed: () {},
+                  onPressed: gerarFrase,
                 ),
               ]),
         ),
